@@ -1,0 +1,151 @@
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: "Google Sans", system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    max-width: 700px;
+    margin: 10% auto;
+    /* padding: 20px; */
+}
+
+h1,
+h2,
+h3 {
+    color: #2c2c2c;
+}
+
+p {
+    color: #3b3b3b;
+}
+
+.profile-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.social-links>a {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #747474;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.social-links>a:hover {
+    background-color: #b8b8b859;
+    /* color: #fff; */
+}
+
+.current-position h3 {
+    margin-bottom: -4px;
+    font-weight: regular;
+    color: #747474;
+}
+
+.current-position p {
+    margin-top: 0;
+    color: #383838;
+}
+
+/* --- Cargos com card em hover --- */
+
+.roles {
+    position: relative;
+    display: inline-block;
+}
+
+.roles__label {
+    background: linear-gradient(90deg, #28a1af 27%, #0085d4 60%, #0853da 94%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: default;
+}
+
+.roles__badge {
+    color: #0853da;
+    margin-left: 4px;
+    font-size: 1.05em;
+    vertical-align: -0.05em;
+    transition: transform 0.3s ease;
+}
+
+.roles:hover .roles__badge {
+    transform: rotate(180deg);
+}
+
+.roles__card {
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding-top: 6px;
+    /* fechado nao captura o mouse; aberto sim, para poder percorrer a lista */
+    pointer-events: none;
+    transition: gap 0.4s cubic-bezier(0.34, 1.42, 0.64, 1);
+}
+
+.roles:hover .roles__card {
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.roles__item {
+    margin: 0;
+    padding: 4px 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.445);
+    font-size: 1rem;
+    white-space: nowrap;
+    color: #1c1c1c;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.roles:hover .roles__item {
+    opacity: 1;
+    visibility: visible;
+}
+
+.roles:hover .roles__item:nth-child(1) { transition-delay: 0.02s; }
+.roles:hover .roles__item:nth-child(2) { transition-delay: 0.07s; }
+.roles:hover .roles__item:nth-child(3) { transition-delay: 0.12s; }
+
+/* texto em volta esmaece enquanto o card está aberto */
+section:has(.roles:hover) p,
+section:has(.roles:hover) .current-position h3 {
+    color: #707070;
+    transition: color 0.3s ease;
+}
+
+section:has(.roles:hover) .roles__item {
+    color: #1c1c1c;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .roles__card,
+    .roles__item,
+    .roles__badge {
+        transition: none;
+    }
+}

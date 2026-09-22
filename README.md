@@ -1,7 +1,7 @@
 # E aí, eu sou o Carlos 👋
 
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/carlosolliveira/)
-[![Gmail](https://img.shields.io/badge/-Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:joliveira@amigosdobem.org)
+[![Gmail](https://img.shields.io/badge/-Email-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:joliveirasimiao@gmail.com)
 
 Desenvolvedor back-end na [Amigos do Bem](https://www.amigosdobem.org), ONG onde comecei como estagiário em 2021 e hoje construo as APIs que rodam a operação.
 
